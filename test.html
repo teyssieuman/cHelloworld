@@ -1,0 +1,253 @@
+
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+		table, th, td {
+			border: 0px dashed #007FFF;
+			border-spacing: 0px 0px;
+			border-collapse:collapse;
+			border-radius: 5px;
+		}
+		
+		table.tcml_sequence {
+			background-color: #33FF66;
+			border-radius: 5px;
+		}
+		table.tcml_simultaneously {
+			background-color: #008C00;
+			border-radius: 5px;
+		}
+		table.tcml_instruction {
+			background-color: #00BFFF;
+			border-radius: 5px;
+		}
+		table.tcml_argument {
+			background-color: #4CD2FF;
+			border-radius: 5px;
+		}
+		table.tcml_signal {
+			background-color: #4CA6FF;
+			border-radius: 5px;
+		}
+		
+		</style>
+	</head>
+	<body>
+		<table>
+			<tr>
+				<td colspan="2">options:</td>
+			</tr>
+			<tr>
+				<td style="width:40px"/>
+				<td>
+					<table>
+						<tr>
+							<td>S</td>
+							<td>=</td>
+							<td>1</td>
+						</tr>
+						<tr>
+							<td>V</td>
+							<td>=</td>
+							<td>[0,1,2,3,4,5,6,7,8]</td>
+						</tr>
+						<tr>
+							<td>fV</td>
+							<td>=</td>
+							<td>[0.0,1.0,2.0,3.0,4.0,5.0,6.0,7.0,8.0]</td>
+						</tr>
+						<tr>
+							<td>bV</td>
+							<td>=</td>
+							<td>[True, False, True, False, True, False, True, False, True]</td>
+						</tr>
+						<tr>
+							<td>M</td>
+							<td>=</td>
+							<td>[1,2;3,4;5,6]</td>
+						</tr>
+						<tr>
+							<td>T</td>
+							<td>=</td>
+							<td>[[1,4,7;2,5,8;3,6,9],[10,13,16;11,14,17;12,15,18],[19,22,25;20,23,26;21,24,27]]</td>
+						</tr>
+					</table>
+				</td> 
+			</tr>
+			<tr>
+				<td colspan="2">outputs:</td>
+			</tr>
+			<tr>
+				<td colspan="2">adjustments:</td>
+			</tr>
+			<tr>
+				<td colspan="2">start:</td>
+			</tr>
+			<tr>
+				<td style="width:40px"/>
+				<td>
+					<table class="tcml_simultaneously">
+						<tr>
+							<td colspan="2">simultaneously:</td>
+						</tr>
+						<tr>
+							<td style="width:40px"/>
+							<td>
+								<table>
+									<tr>
+										<td>
+											<table class="tcml_sequence">
+												<tr>
+													<td colspan="2">sequence:</td>
+												</tr>
+												<tr>
+													<td style="width:40px"/>
+													<td>
+														<table>
+															<tr>
+																<td>
+																	<table class="tcml_instruction">
+																		<tr>
+																			<td style="width:40px">rampUntil</td>
+																			<td><table class="tcml_signal"><tr><td>S</td></tr></table></td>
+																			<td>[</td>
+																			<td><table class="tcml_argument"><tr><td>[1,1]</td></tr></table></td>
+																			<td>,</td>
+																			<td><table class="tcml_argument"><tr><td>1</td></tr></table></td>
+																			<td>]</td>
+																		</tr>
+																	</table>
+																</td>
+															</tr>
+															<tr>
+																<td>
+																	<table class="tcml_instruction">
+																		<tr>
+																			<td style="width:40px">wait</td>
+																			<td>[</td>
+																			<td><table class="tcml_argument"><tr><td>STEP</td></tr></table></td>
+																			<td>]</td>
+																			<td>s</td>
+																		</tr>
+																	</table>
+																</td>
+															</tr>
+															<tr>
+																<td>
+																	<table class="tcml_instruction">
+																		<tr>
+																			<td style="width:40px">setInt</td>
+																			<td style="width:40px">S</td>
+																			<td>[</td>
+																			<td>0</td>
+																			<td>]</td>
+																		</tr>
+																	</table>
+																</td>
+															</tr>
+															<tr>
+																<td>
+																	<table class="tcml_instruction">
+																		<tr>
+																			<td style="width:40px">wait</td>
+																			<td>[</td>
+																			<td>STEP</td>
+																			<td>]</td>
+																			<td>s</td>
+																		</tr>
+																	</table>
+																</td>
+															</tr>
+													
+														</table>
+														
+													</td>
+												</tr>
+											</table>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<table class="tcml_sequence">
+												<tr>
+													<td colspan="2">sequence:</td>
+												</tr>
+												<tr>
+													<td style="width:40px"/>
+													<td>
+														<table>
+															<tr>
+																<td>
+																	<table class="tcml_instruction">
+																		<tr>
+																			<td style="width:40px">rampUntil</td>
+																			<td style="width:40px">S</td>
+																			<td>[</td>
+																			<td>[1,1]</td>
+																			<td>,</td>
+																			<td>1</td>
+																			<td>]</td>
+																		</tr>
+																	</table>
+																</td>
+															</tr>
+															<tr>
+																<td>
+																	<table class="tcml_instruction">
+																		<tr>
+																			<td style="width:40px">wait</td>
+																			<td>[</td>
+																			<td>STEP</td>
+																			<td>]</td>
+																			<td>s</td>
+																		</tr>
+																	</table>
+																</td>
+															</tr>
+															<tr>
+																<td>
+																	<table class="tcml_instruction">
+																		<tr>
+																			<td style="width:40px">setInt</td>
+																			<td style="width:40px">S</td>
+																			<td>[</td>
+																			<td>0</td>
+																			<td>]</td>
+																		</tr>
+																	</table>
+																</td>
+															</tr>
+															<tr>
+																<td>
+																	<table class="tcml_instruction">
+																		<tr>
+																			<td style="width:40px">wait</td>
+																			<td>[</td>
+																			<td>STEP</td>
+																			<td>]</td>
+																			<td>s</td>
+																		</tr>
+																	</table>
+																</td>
+															</tr>
+													
+														</table>
+														
+													</td>
+												</tr>
+											</table>
+										</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+					</table>
+				</td> 
+			</tr>
+			<tr>
+		</table>
+
+	</body>
+</html>

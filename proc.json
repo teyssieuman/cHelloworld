@@ -1,0 +1,82 @@
+{
+   "_id": "scen_test_001",
+   "_rev": "11-9d86d0062b2d3c427aa6d02c5fb02506",
+   "inputs": [
+       "input_1"
+   ],
+   "outputs": [
+       "output_1"
+   ],
+   "adjustments": null,
+   "parameters": null,
+   "options": null,
+   "start": [
+       {
+           "sequence": [
+               {
+                   "simultaneously": [
+                       {
+                           "sequence": [
+                               {
+                                   "wait": {
+                                       "duration": 0.1,
+                                       "unit": "s"
+                                   }
+                               },
+                               {
+                                   "setInt": {
+                                       "signal": "input_1",
+                                       "value": 123
+                                   }
+                               },
+                               {
+                                   "wait": {
+                                       "duration": 0.1,
+                                       "unit": "s"
+                                   }
+                               }
+                           ]
+                       },
+                       {
+                           "verify": {
+                               "TC_ID": "TC_0001",
+                               "properties": [
+                                   {
+                                       "temporality": [
+                                           {
+                                               "type": "BEFORE",
+                                               "expression": {
+                                                   "equals": {
+                                                       "right": "TIME",
+                                                       "left": 0.1
+                                                   }
+                                               },
+                                               "delay": {
+                                                   "global": 15.2
+                                               }
+                                           }
+                                       ],
+                                       "repetition": "ALWAYS",
+                                       "expression": {
+                                           "equal": {
+                                               "right": {
+                                                   "literal": "0.001"
+                                               },
+                                               "left": {
+                                                   "signal": "output_1"
+                                               },
+                                               "tolerence": {
+                                                   "literal": "0.001"
+                                               }
+                                           }
+                                       }
+                                   }
+                               ]
+                           }
+                       }
+                   ]
+               }
+           ]
+       }
+   ]
+}
